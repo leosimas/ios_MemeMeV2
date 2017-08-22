@@ -82,8 +82,10 @@ class MemeEditorViewController: UIViewController {
     
     private func pickImage( from sourceType : UIImagePickerControllerSourceType) {
         let pickImageController = UIImagePickerController()
+        pickImageController.allowsEditing = true;
         pickImageController.delegate = self
         pickImageController.sourceType = sourceType
+        
         present(pickImageController, animated: true, completion: nil)
     }
     
@@ -113,7 +115,7 @@ class MemeEditorViewController: UIViewController {
     private func saveMeme() {
         let meme = Meme(topText: topTextfield.text!, bottomText: bottomTextfield.text!, originalImage: imageView.image!, memedImage: memedImage)
         
-        // TODO
+        // TODO persist meme data
     }
     
     private func generateMemedImage() -> UIImage {
@@ -181,7 +183,9 @@ extension MemeEditorViewController : UIImagePickerControllerDelegate, UINavigati
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            imageView.image = image
+        } else if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = image
         }
         
@@ -201,6 +205,15 @@ extension MemeEditorViewController : UITextFieldDelegate {
             firstEditingTop = false
             textField.text = "BOTTOM"
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag == TAG_TOP_TEXT || textField.tag == TAG_BOTTOM_TEXT {
+            textField.resignFirstResponder()
+            return false
+        }
+        
+        return true
     }
     
 }
