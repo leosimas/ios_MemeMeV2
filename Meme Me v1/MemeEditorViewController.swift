@@ -148,6 +148,10 @@ class MemeEditorViewController: UIViewController {
     }
     
     func keyboardWillHide(_ notification:Notification) {
+        if topTextfield.isEditing {
+            return
+        }
+        
         view.frame.origin.y += getKeyboardHeight(notification)
     }
     
