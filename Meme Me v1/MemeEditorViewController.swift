@@ -35,16 +35,23 @@ class MemeEditorViewController: UIViewController {
         NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         NSStrokeWidthAttributeName: -2]
     
+    let placeHolderString = NSAttributedString(string: "Type Here",
+    attributes: [
+        NSForegroundColorAttributeName: UIColor.gray,
+        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         topTextfield.tag = TAG_TOP_TEXT
         topTextfield.defaultTextAttributes = memeTextAttributes
         topTextfield.textAlignment = .center
+        topTextfield.attributedPlaceholder = placeHolderString
         
         bottomTextfield.tag = TAG_BOTTOM_TEXT
         bottomTextfield.defaultTextAttributes = memeTextAttributes
         bottomTextfield.textAlignment = .center
+        bottomTextfield.attributedPlaceholder = placeHolderString
         
         topTextfield.delegate = self
         bottomTextfield.delegate = self
@@ -113,6 +120,8 @@ class MemeEditorViewController: UIViewController {
         
         topToolbar.isHidden = true
         bottomToolbar.isHidden = true
+        topTextfield.placeholder = ""
+        bottomTextfield.placeholder = ""
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -122,6 +131,8 @@ class MemeEditorViewController: UIViewController {
         
         topToolbar.isHidden = false
         bottomToolbar.isHidden = false
+        topTextfield.attributedPlaceholder = placeHolderString
+        bottomTextfield.attributedPlaceholder = placeHolderString
         
         return memedImage
     }
@@ -129,6 +140,10 @@ class MemeEditorViewController: UIViewController {
     
     // MARK: keyboard events
     func keyboardWillShow(_ notification:Notification) {
+        if topTextfield.isEditing {
+            return
+        }
+        
         view.frame.origin.y = 0 - getKeyboardHeight(notification)
     }
     
