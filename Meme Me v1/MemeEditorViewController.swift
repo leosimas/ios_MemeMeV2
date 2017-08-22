@@ -21,6 +21,8 @@ class MemeEditorViewController: UIViewController {
     @IBOutlet weak var topToolbar: UIToolbar!
     @IBOutlet weak var bottomToolbar: UIToolbar!
     
+    @IBOutlet weak var fontButton: UIBarButtonItem!
+    
     var memedImage : UIImage!
     
     let TAG_TOP_TEXT = 1
@@ -28,6 +30,15 @@ class MemeEditorViewController: UIViewController {
     
     var firstEditingTop = true
     var firstEditingBottom = true
+    
+    var topFontIndex = 0
+    var bottomFontIndex = 0
+    
+    let availableFonts = [
+        UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        UIFont(name: "Arial-BoldMT", size: 40)!,
+        UIFont(name: "Futura-Medium", size: 40)!
+    ]
     
     let memeTextAttributes:[String:Any] = [
         NSStrokeColorAttributeName: UIColor.black,
@@ -55,6 +66,7 @@ class MemeEditorViewController: UIViewController {
         
         topTextfield.delegate = self
         bottomTextfield.delegate = self
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,6 +76,8 @@ class MemeEditorViewController: UIViewController {
         
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         shareButton.isEnabled = imageView.image != nil
+        
+        hideFontButton()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -139,6 +153,39 @@ class MemeEditorViewController: UIViewController {
         return memedImage
     }
     
+    // MARK: font changing
+    
+    @IBAction func fontChange(_ sender: Any) {
+        var newIndex : Int
+        var textfield : UITextField
+        
+        if topTextfield.isEditing {
+            topFontIndex = (topFontIndex + 1) % availableFonts.count
+            newIndex = topFontIndex
+            textfield = topTextfield
+        } else {
+            bottomFontIndex = (bottomFontIndex + 1) % availableFonts.count
+            newIndex = bottomFontIndex
+            textfield = bottomTextfield
+        }
+        
+        let newFont = availableFonts[newIndex]
+        textfield.font = newFont
+        
+        fontButton.title = newFont.fontName
+    }
+    
+    
+    fileprivate func showFontButton(of textfield : UITextField) {
+        fontButton.title = textfield.font?.fontName
+        fontButton.isEnabled = true
+        fontButton.tintColor = nil
+    }
+    
+    private func hideFontButton() {
+        fontButton.isEnabled = false
+        fontButton.tintColor = UIColor.clear
+    }
     
     // MARK: keyboard events
     func keyboardWillShow(_ notification:Notification) {
@@ -155,6 +202,8 @@ class MemeEditorViewController: UIViewController {
         }
         
         view.frame.origin.y += getKeyboardHeight(notification)
+        
+        hideFontButton()
     }
     
     private func getKeyboardHeight(_ notification:Notification) -> CGFloat {
@@ -205,6 +254,8 @@ extension MemeEditorViewController : UITextFieldDelegate {
             firstEditingTop = false
             textField.text = "BOTTOM"
         }
+        
+        showFontButton(of: textField)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

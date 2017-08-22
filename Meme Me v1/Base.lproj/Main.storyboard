@@ -33,7 +33,13 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="GNW-1K-yqf"/>
-                                    <barButtonItem title="Cancel" id="2fE-Zs-3My"/>
+                                    <barButtonItem title="Font" id="DoT-V8-9Mn" userLabel="fontButton">
+                                        <connections>
+                                            <action selector="fontChange:" destination="BYZ-38-t0r" id="BsB-Xz-fKJ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1Vq-YK-jpB"/>
+                                    <barButtonItem enabled="NO" title="Cancel" id="2fE-Zs-3My"/>
                                 </items>
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Type here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DuA-xN-dOU" userLabel="topTextfield">
@@ -90,6 +96,7 @@
                         <outlet property="bottomTextfield" destination="oFb-e9-BCN" id="4AH-fa-szg"/>
                         <outlet property="bottomToolbar" destination="ZF2-fr-piN" id="Xu5-DF-N8N"/>
                         <outlet property="cameraButton" destination="ssh-eO-fOF" id="uIk-Vg-rlD"/>
+                        <outlet property="fontButton" destination="DoT-V8-9Mn" id="GSJ-xe-nuE"/>
                         <outlet property="imageView" destination="fUr-zJ-3Rf" id="b4z-WO-yq1"/>
                         <outlet property="shareButton" destination="WR1-Rf-XWs" id="adV-6C-k9Y"/>
                         <outlet property="topTextfield" destination="DuA-xN-dOU" id="pfn-i3-vMl"/>
