@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A355A66F1F4C8C0F0090D843 /* Meme Me v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meme Me v1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A355A66F1F4C8C0F0090D843 /* Meme Me v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meme Me v2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A355A6721F4C8C0F0090D843 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A355A6771F4C8C0F0090D843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A355A6791F4C8C0F0090D843 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		A355A6661F4C8C0F0090D843 = {
 			isa = PBXGroup;
 			children = (
-				A355A6711F4C8C0F0090D843 /* Meme Me v1 */,
+				A355A6711F4C8C0F0090D843 /* Meme Me v2 */,
 				A355A6701F4C8C0F0090D843 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,12 +48,12 @@
 		A355A6701F4C8C0F0090D843 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A355A66F1F4C8C0F0090D843 /* Meme Me v1.app */,
+				A355A66F1F4C8C0F0090D843 /* Meme Me v2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A355A6711F4C8C0F0090D843 /* Meme Me v1 */ = {
+		A355A6711F4C8C0F0090D843 /* Meme Me v2 */ = {
 			isa = PBXGroup;
 			children = (
 				A355A6721F4C8C0F0090D843 /* AppDelegate.swift */,
@@ -64,15 +64,16 @@
 				A355A67B1F4C8C0F0090D843 /* LaunchScreen.storyboard */,
 				A355A67E1F4C8C0F0090D843 /* Info.plist */,
 			);
+			name = "Meme Me v2";
 			path = "Meme Me v1";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A355A66E1F4C8C0F0090D843 /* Meme Me v1 */ = {
+		A355A66E1F4C8C0F0090D843 /* Meme Me v2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A355A6811F4C8C0F0090D843 /* Build configuration list for PBXNativeTarget "Meme Me v1" */;
+			buildConfigurationList = A355A6811F4C8C0F0090D843 /* Build configuration list for PBXNativeTarget "Meme Me v2" */;
 			buildPhases = (
 				A355A66B1F4C8C0F0090D843 /* Sources */,
 				A355A66C1F4C8C0F0090D843 /* Frameworks */,
@@ -82,9 +83,9 @@
 			);
 			dependencies = (
 			);
-			name = "Meme Me v1";
+			name = "Meme Me v2";
 			productName = "Meme Me v1";
-			productReference = A355A66F1F4C8C0F0090D843 /* Meme Me v1.app */;
+			productReference = A355A66F1F4C8C0F0090D843 /* Meme Me v2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -103,7 +104,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A355A66A1F4C8C0F0090D843 /* Build configuration list for PBXProject "Meme Me v1" */;
+			buildConfigurationList = A355A66A1F4C8C0F0090D843 /* Build configuration list for PBXProject "Meme Me v2" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -116,7 +117,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A355A66E1F4C8C0F0090D843 /* Meme Me v1 */,
+				A355A66E1F4C8C0F0090D843 /* Meme Me v2 */,
 			);
 		};
 /* End PBXProject section */
@@ -268,7 +269,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Meme Me v1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.simas.leonardo.Meme-Me-v1";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.simas.leonardo.Meme-Me-v2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -280,7 +281,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Meme Me v1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.simas.leonardo.Meme-Me-v1";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.simas.leonardo.Meme-Me-v2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -289,7 +290,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A355A66A1F4C8C0F0090D843 /* Build configuration list for PBXProject "Meme Me v1" */ = {
+		A355A66A1F4C8C0F0090D843 /* Build configuration list for PBXProject "Meme Me v2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A355A67F1F4C8C0F0090D843 /* Debug */,
@@ -298,7 +299,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A355A6811F4C8C0F0090D843 /* Build configuration list for PBXNativeTarget "Meme Me v1" */ = {
+		A355A6811F4C8C0F0090D843 /* Build configuration list for PBXNativeTarget "Meme Me v2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A355A6821F4C8C0F0090D843 /* Debug */,
