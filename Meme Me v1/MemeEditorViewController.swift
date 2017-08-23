@@ -24,6 +24,7 @@ class MemeEditorViewController: UIViewController {
     @IBOutlet weak var fontButton: UIBarButtonItem!
     
     var memedImage : UIImage!
+    var meme : Meme?
     
     let TAG_TOP_TEXT = 1
     let TAG_BOTTOM_TEXT = 2
@@ -55,8 +56,14 @@ class MemeEditorViewController: UIViewController {
         super.viewDidLoad()
         
         configure(topTextfield, withTag : TAG_TOP_TEXT)
-        
         configure(bottomTextfield, withTag : TAG_BOTTOM_TEXT)
+        
+        if meme != nil {
+            let meme = self.meme!
+            topTextfield.text = meme.topText
+            bottomTextfield.text = meme.topText
+            imageView.image = meme.originalImage
+        }
         
     }
     
@@ -87,6 +94,11 @@ class MemeEditorViewController: UIViewController {
 
     @IBAction func pickAlbumImage(_ sender: Any) {
         pickImage(from: .photoLibrary)
+    }
+    
+    
+    @IBAction func cancelEditing(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func pickCameraImage(_ sender: Any) {
@@ -129,6 +141,8 @@ class MemeEditorViewController: UIViewController {
         let meme = Meme(topText: topTextfield.text!, bottomText: bottomTextfield.text!, originalImage: imageView.image!, memedImage: memedImage)
         
         AppDelegate.shared().add(meme)
+        
+        dismiss(animated: true, completion: nil)
     }
     
     private func generateMemedImage() -> UIImage {

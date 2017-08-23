@@ -15,4 +15,10 @@ struct Meme {
     let originalImage : UIImage
     let memedImage : UIImage
     
+    var fullText : String {
+        get {
+            return topText + " " + bottomText
+        }
+    }
+    
 }
