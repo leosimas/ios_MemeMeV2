@@ -54,19 +54,18 @@ class MemeEditorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        topTextfield.tag = TAG_TOP_TEXT
-        topTextfield.defaultTextAttributes = memeTextAttributes
-        topTextfield.textAlignment = .center
-        topTextfield.attributedPlaceholder = placeHolderString
+        configure(topTextfield, withTag : TAG_TOP_TEXT)
         
-        bottomTextfield.tag = TAG_BOTTOM_TEXT
-        bottomTextfield.defaultTextAttributes = memeTextAttributes
-        bottomTextfield.textAlignment = .center
-        bottomTextfield.attributedPlaceholder = placeHolderString
+        configure(bottomTextfield, withTag : TAG_BOTTOM_TEXT)
         
-        topTextfield.delegate = self
-        bottomTextfield.delegate = self
-        
+    }
+    
+    private func configure(_ textfield : UITextField, withTag tag : Int) {
+        textfield.tag = tag
+        textfield.defaultTextAttributes = memeTextAttributes
+        textfield.textAlignment = .center
+        textfield.attributedPlaceholder = placeHolderString
+        textfield.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -134,10 +133,7 @@ class MemeEditorViewController: UIViewController {
     
     private func generateMemedImage() -> UIImage {
         
-        topToolbar.isHidden = true
-        bottomToolbar.isHidden = true
-        topTextfield.placeholder = ""
-        bottomTextfield.placeholder = ""
+        setMemeTools(hidden: true)
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -145,12 +141,22 @@ class MemeEditorViewController: UIViewController {
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        topToolbar.isHidden = false
-        bottomToolbar.isHidden = false
-        topTextfield.attributedPlaceholder = placeHolderString
-        bottomTextfield.attributedPlaceholder = placeHolderString
+        setMemeTools(hidden: false)
         
         return memedImage
+    }
+    
+    private func setMemeTools(hidden : Bool) {
+        topToolbar.isHidden = hidden
+        bottomToolbar.isHidden = hidden
+        
+        if hidden {
+            topTextfield.placeholder = ""
+            bottomTextfield.placeholder = ""
+        } else {
+            topTextfield.attributedPlaceholder = placeHolderString
+            bottomTextfield.attributedPlaceholder = placeHolderString
+        }
     }
     
     // MARK: font changing
@@ -201,7 +207,7 @@ class MemeEditorViewController: UIViewController {
             return
         }
         
-        view.frame.origin.y += getKeyboardHeight(notification)
+        view.frame.origin.y = 0
         
         hideFontButton()
     }
