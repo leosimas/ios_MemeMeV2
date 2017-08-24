@@ -21,6 +21,10 @@ class SentMemesViewController: UIViewController {
     internal func openEditor(_ meme : Meme? = nil) {
         MemeEditorViewController.open(controller: self, meme : meme)
     }
+    
+    internal func openDetail(_ meme : Meme) {
+        MemeDetailViewController.open(navigation: navigationController!, meme: meme)
+    }
 
 }
 

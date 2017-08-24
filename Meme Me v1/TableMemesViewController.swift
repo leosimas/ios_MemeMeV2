@@ -38,7 +38,7 @@ class TableMemesViewController: SentMemesViewController, UITableViewDataSource, 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let meme = getMeme(byIndex: indexPath.row)
-        openEditor(meme)
+        openDetail(meme)
     }
 
 }
