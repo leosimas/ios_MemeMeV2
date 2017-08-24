@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yMA-wA-hLy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G22-tj-iTg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,17 +20,17 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="naY-W8-VsC" kind="relationship" relationship="rootViewController" id="sXb-8k-cgT"/>
+                        <segue destination="yMA-wA-hLy" kind="relationship" relationship="rootViewController" id="39z-3o-H93"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5uU-rC-1Wa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1273" y="-278"/>
+            <point key="canvasLocation" x="-2167" y="97"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="Vn7-0j-FJD">
             <objects>
-                <tabBarController id="yMA-wA-hLy" sceneMemberID="viewController">
+                <tabBarController id="yMA-wA-hLy" customClass="TabBarViewController" customModule="Meme_Me_v2" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="wFX-dl-1Sb"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="yGO-lw-6PU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -38,14 +38,15 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="G22-tj-iTg" kind="relationship" relationship="viewControllers" id="RYs-DK-0T5"/>
+                        <segue destination="naY-W8-VsC" kind="relationship" relationship="viewControllers" id="RFP-lC-xl3"/>
+                        <segue destination="Opf-Q3-3iD" kind="relationship" relationship="viewControllers" id="h38-Ew-sCv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNS-Xn-xYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2204" y="97"/>
+            <point key="canvasLocation" x="-1353" y="97"/>
         </scene>
-        <!--Table Memes View Controller-->
+        <!--List-->
         <scene sceneID="8gD-3A-NsN">
             <objects>
                 <viewController id="naY-W8-VsC" customClass="TableMemesViewController" customModule="Meme_Me_v2" customModuleProvider="target" sceneMemberID="viewController">
@@ -107,7 +108,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" selectedImage="TableButton" id="dxM-q6-0bm"/>
+                    <tabBarItem key="tabBarItem" title="List" image="TableButton" id="dxM-q6-0bm"/>
                     <navigationItem key="navigationItem" id="pPl-px-meR"/>
                     <connections>
                         <outlet property="tableView" destination="MwR-Ui-4NR" id="ldD-xm-gNY"/>
@@ -116,6 +117,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMX-R0-ZON" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-433" y="-277"/>
+        </scene>
+        <!--Grid-->
+        <scene sceneID="Sm5-1Z-8Rz">
+            <objects>
+                <viewController id="Opf-Q3-3iD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RZh-H8-1Yh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Od0-SM-KJ1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sZE-ul-N5F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="1" title="Grid" image="CollectionButton" id="FWR-hJ-AOm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f3r-x8-DAi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-434" y="504"/>
         </scene>
         <!--Meme Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -221,6 +241,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CollectionButton" width="30" height="30"/>
         <image name="TableButton" width="30" height="30"/>
     </resources>
 </document>

@@ -16,6 +16,7 @@
 		A355A6911F4DFFB10090D843 /* SentMemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A355A6901F4DFFB10090D843 /* SentMemesViewController.swift */; };
 		A355A6931F4E01C30090D843 /* TableMemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A355A6921F4E01C30090D843 /* TableMemesViewController.swift */; };
 		A355A6951F4E04BA0090D843 /* MemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A355A6941F4E04BA0090D843 /* MemeTableViewCell.swift */; };
+		A355A6971F4F035D0090D843 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A355A6961F4F035D0090D843 /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A355A6901F4DFFB10090D843 /* SentMemesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemesViewController.swift; sourceTree = "<group>"; };
 		A355A6921F4E01C30090D843 /* TableMemesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableMemesViewController.swift; sourceTree = "<group>"; };
 		A355A6941F4E04BA0090D843 /* MemeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTableViewCell.swift; sourceTree = "<group>"; };
+		A355A6961F4F035D0090D843 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				A355A6901F4DFFB10090D843 /* SentMemesViewController.swift */,
 				A355A6921F4E01C30090D843 /* TableMemesViewController.swift */,
 				A355A6941F4E04BA0090D843 /* MemeTableViewCell.swift */,
+				A355A6961F4F035D0090D843 /* TabBarViewController.swift */,
 				A355A6761F4C8C0F0090D843 /* Main.storyboard */,
 				A355A6791F4C8C0F0090D843 /* Assets.xcassets */,
 				A355A67B1F4C8C0F0090D843 /* LaunchScreen.storyboard */,
@@ -153,6 +156,7 @@
 				A355A6871F4C8CBF0090D843 /* Meme.swift in Sources */,
 				A355A6731F4C8C0F0090D843 /* AppDelegate.swift in Sources */,
 				A355A6951F4E04BA0090D843 /* MemeTableViewCell.swift in Sources */,
+				A355A6971F4F035D0090D843 /* TabBarViewController.swift in Sources */,
 				A355A6931F4E01C30090D843 /* TableMemesViewController.swift in Sources */,
 				A355A6861F4C8CBF0090D843 /* MemeEditorViewController.swift in Sources */,
 			);

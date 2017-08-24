@@ -9,13 +9,6 @@
 import UIKit
 
 class SentMemesViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        title = "Sent Memes"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createMeme))
-    }
 
     internal func getMemesCount() -> Int {
         return AppDelegate.shared().listMemes().count
@@ -26,13 +19,7 @@ class SentMemesViewController: UIViewController {
     }
     
     internal func openEditor(_ meme : Meme? = nil) {
-        let editorVC = storyboard?.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
-        editorVC.meme = meme
-        present(editorVC, animated: true, completion: nil)
-    }
-    
-    func createMeme() {
-        openEditor()
+        MemeEditorViewController.open(controller: self, meme : meme)
     }
 
 }

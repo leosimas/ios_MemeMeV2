@@ -91,6 +91,15 @@ class MemeEditorViewController: UIViewController {
         
         unsubscribeFromKeyboardNotifications()
     }
+    
+    // MARK: open editor:
+    static func open(controller : UIViewController, meme : Meme? = nil) {
+        let editorVC = controller.storyboard?.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
+        editorVC.meme = meme
+        controller.present(editorVC, animated: true, completion: nil)
+    }
+    
+    // MARK: pick image
 
     @IBAction func pickAlbumImage(_ sender: Any) {
         pickImage(from: .photoLibrary)
@@ -138,9 +147,16 @@ class MemeEditorViewController: UIViewController {
     // MARK: Meme generator
     
     private func saveMeme() {
-        let meme = Meme(topText: topTextfield.text!, bottomText: bottomTextfield.text!, originalImage: imageView.image!, memedImage: memedImage)
+        let newMeme = Meme(topText: topTextfield.text!, bottomText: bottomTextfield.text!, originalImage: imageView.image!, memedImage: memedImage)
         
-        AppDelegate.shared().add(meme)
+        AppDelegate.shared().add(newMeme)
+        
+        // TODO replace old one:
+//        if meme == nil {
+//            
+//        } else {
+//            AppDelegate.shared().add(newMeme)
+//        }
         
         dismiss(animated: true, completion: nil)
     }
