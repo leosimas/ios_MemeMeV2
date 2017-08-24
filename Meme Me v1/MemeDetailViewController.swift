@@ -18,12 +18,18 @@ class MemeDetailViewController: UIViewController {
         super.viewDidLoad()
 
         imageView.image = meme.memedImage
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editMeme))
     }
     
     static func open(navigation : UINavigationController, meme : Meme) {
         let detailVC = navigation.storyboard?.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
         detailVC.meme = meme
         navigation.pushViewController(detailVC, animated: true)
+    }
+    
+    func editMeme() {
+        MemeEditorViewController.open(controller: self, meme: meme)
     }
 
 }

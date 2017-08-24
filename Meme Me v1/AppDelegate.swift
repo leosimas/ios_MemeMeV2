@@ -26,6 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func listMemes() -> [Meme] {
         return memes
     }
+    
+    func delete(byIndex index : Int) {
+        memes.remove(at: index)
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

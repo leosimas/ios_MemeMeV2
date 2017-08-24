@@ -42,4 +42,17 @@ class TableMemesViewController: SentMemesViewController, UITableViewDataSource, 
         openDetail(meme)
     }
 
+    
+    // MARK: enable editing
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            AppDelegate.shared().delete(byIndex : indexPath.row)
+            tableView.reloadData()
+        }
+    }
+
 }
