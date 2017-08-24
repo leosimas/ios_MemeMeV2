@@ -149,7 +149,10 @@ class MemeEditorViewController: UIViewController {
     private func saveMeme() {
         let newMeme = Meme(topText: topTextfield.text!, bottomText: bottomTextfield.text!, originalImage: imageView.image!, memedImage: memedImage)
         
-        AppDelegate.shared().add(newMeme)
+        for _ in 1...20 {
+            AppDelegate.shared().add(newMeme)
+        }
+        
         
         // TODO replace old one:
 //        if meme == nil {

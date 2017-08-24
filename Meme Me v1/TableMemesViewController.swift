@@ -15,6 +15,7 @@ class TableMemesViewController: SentMemesViewController, UITableViewDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        tableView.contentInset = UIEdgeInsetsMake(0, 0, bottomLayoutGuide.length, 0)
         tableView.rowHeight = 126
     }
     
