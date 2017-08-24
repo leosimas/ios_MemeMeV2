@@ -51,7 +51,7 @@ class TableMemesViewController: SentMemesViewController, UITableViewDataSource, 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             AppDelegate.shared().delete(byIndex : indexPath.row)
-            tableView.reloadData()
+            tableView.deleteRows(at: [indexPath], with: .top)
         }
     }
 
