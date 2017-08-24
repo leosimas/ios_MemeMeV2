@@ -31,9 +31,7 @@ class TableMemesViewController: SentMemesViewController, UITableViewDataSource, 
         let meme = getMeme(byIndex: indexPath.row)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemeTableViewCell") as! MemeTableViewCell
-        cell.imageMeme.image = meme.memedImage
-        cell.label.text = meme.fullText
-        
+        cell.setupCellWith(meme)
         return cell
     }
     

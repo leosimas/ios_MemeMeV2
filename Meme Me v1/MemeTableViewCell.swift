@@ -10,9 +10,12 @@ import UIKit
 
 class MemeTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var imageMeme: UIImageView!
-
     @IBOutlet weak var label: UILabel!
+    
+    func setupCellWith(_ meme : Meme) {
+        imageMeme.image = meme.memedImage
+        label.text = meme.fullText
+    }
     
 }
